@@ -4,3 +4,4 @@ obj/
 .settings/
 *.prg
 *.prg.debug.xml
+*.iq

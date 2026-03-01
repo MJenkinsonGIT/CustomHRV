@@ -30,11 +30,45 @@ The knowledge base is open source. If you're building Connect IQ apps for the Ve
 
 ## Installation
 
+### Which file should I download?
+
+Each release includes three files. All three contain the same app — the difference is how they were compiled:
+
+| File | Size | Best for |
+|------|------|----------|
+| `CustomHRV-release.prg` | Smallest | Most users — just install and run |
+| `CustomHRV-debug.prg` | ~4× larger | Troubleshooting crashes — includes debug symbols |
+| `CustomHRV.iq` | Small (7-zip archive) | Developers / advanced users |
+
+**Release `.prg`** is a fully optimised build with debug symbols and logging stripped out. This is what you want if you just want to use the app.
+
+**Debug `.prg` + `.prg.debug.xml`** — these two files must be kept together. The `.prg` is the app binary; the `.prg.debug.xml` is the symbol map that translates raw crash addresses into source file names and line numbers. If the app crashes, the watch writes a log to `GARMIN\APPS\LOGS\CIQ_LOG.YAML` — cross-referencing that log against the `.prg.debug.xml` tells you exactly which line of code caused the crash. Without the `.prg.debug.xml`, the crash addresses in the log are unreadable hex. The app behaves identically to the release build; there is no difference in features or behaviour.
+
+**`.iq` file** is a 7-zip archive containing the release `.prg` plus metadata (manifest, settings schema, signature). It is the format used for Connect IQ Store submissions. You can extract the `.prg` from it by renaming it to `.7z` and extracting — Windows 11 (22H2 and later) supports 7-zip natively via File Explorer's right-click menu. On older Windows versions you will need [7-Zip](https://www.7-zip.org/) (free).
+
+---
+
+**Option A — direct `.prg` download (simplest)**
 1. Download the `.prg` file from the [Releases](#) section
 2. Connect your Venu 3 via USB
-3. Copy the `.prg` file to `GARMIN\APPS\` on the watch
+3. Copy the `.prg` to `GARMIN\APPS\` on the watch
 4. Press the **Back button** on the watch — it will show "Verifying Apps"
 5. Unplug once the watch finishes
+
+**Option B — debug build (for crash analysis)**
+1. Download both `CustomHRV-debug.prg` and `CustomHRV.prg.debug.xml` — keep them together in the same folder on your PC
+2. Copy `CustomHRV-debug.prg` to `GARMIN\APPS\` on the watch
+3. Press the **Back button** on the watch — it will show "Verifying Apps"
+4. If the app crashes, retrieve `GARMIN\APPS\LOGS\CIQ_LOG.YAML` from the watch and cross-reference it against the `.prg.debug.xml` to identify the crash location
+
+**Option C — extracting from the `.iq` file**
+
+1. Rename `CustomHRV.iq` to `CustomHRV.7z`
+2. Right-click it → **Extract All** (Windows 11 22H2+) or use [7-Zip](https://www.7-zip.org/) on older Windows
+3. Inside the extracted folder, find `006-B4260-00\CustomHRV.prg` — the folder name is Garmin's internal device ID for the Venu 3
+4. Copy `CustomHRV.prg` to `GARMIN\APPS\` on the watch
+5. Press the **Back button** on the watch — it will show "Verifying Apps"
+6. Unplug once the watch finishes
 
 The app will appear in your app list. No activity data screen setup is needed — CustomHRV is a standalone watch app, not a data field.
 
