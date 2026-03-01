@@ -1,0 +1,7 @@
+project.manifest = manifest.xml
+
+base.sourcePath = source
+base.resourcePath = resources
+
+venu3.sourcePath = source
+venu3.resourcePath = resources

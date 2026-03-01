@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    <iq:application
+        entry="CustomHRVApp"
+        launcherIcon="@Drawables.LauncherIcon"
+        id="D4A1B7C2E3F8059671A4B3C2E5D7F019"
+        minApiLevel="3.1.0"
+        name="@Strings.AppName"
+        type="watch-app"
+        version="1.0.0">
+
+        <iq:products>
+            <iq:product id="venu3"/>
+        </iq:products>
+
+        <iq:permissions>
+            <iq:uses-permission id="Sensor"/>
+            <iq:uses-permission id="Fit"/>
+        </iq:permissions>
+
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+
+    </iq:application>
+</iq:manifest>

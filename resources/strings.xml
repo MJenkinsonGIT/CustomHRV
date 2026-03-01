@@ -1,0 +1,35 @@
+<resources>
+    <string id="AppName">CustomHRV</string>
+
+    <!-- Arrow glyphs — defined here so resource compiler handles font lookup -->
+    <string id="ArrowUp">▲</string>
+    <string id="ArrowDown">▼</string>
+
+    <!-- Settings titles -->
+    <string id="SettingAvgMethodTitle">Average Method</string>
+    <string id="SettingAvgMethodPrompt">How to calculate your baseline</string>
+    <string id="SettingSimpleAvg">Simple Average</string>
+    <string id="SettingEWMA">Weighted (EWMA)</string>
+
+    <string id="SettingWindowSizeTitle">Readings in Window</string>
+    <string id="SettingWindowSizePrompt">Number of valid readings to include (5-30)</string>
+    <string id="SettingWindowSizeError">Enter a number between 5 and 30</string>
+
+    <string id="SettingMinReadingsTitle">Minimum Readings</string>
+    <string id="SettingMinReadingsPrompt">Readings needed before results show (3-10)</string>
+    <string id="SettingMinReadingsError">Enter a number between 3 and 10</string>
+
+    <string id="SettingAlphaTitle">EWMA Smoothing (Alpha)</string>
+    <string id="SettingAlphaPrompt">Weight of recent readings 1-9 (default 3 = 0.3)</string>
+    <string id="SettingAlphaError">Enter a number between 1 and 9</string>
+
+    <string id="SettingMaxEmptyTitle">Max Empty Callbacks %</string>
+    <string id="SettingMaxEmptyPrompt">Reject reading above this % of empty callbacks (0-100)</string>
+    <string id="SettingMaxEmptyError">Enter a number between 0 and 100</string>
+
+    <string id="SettingDurationTitle">Measurement Duration</string>
+    <string id="SettingDurationPrompt">Length of each HRV session</string>
+    <string id="SettingDuration1">1 minute</string>
+    <string id="SettingDuration2">2 minutes</string>
+    <string id="SettingDuration3">3 minutes</string>
+</resources>

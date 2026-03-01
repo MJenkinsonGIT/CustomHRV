@@ -1,0 +1,19 @@
+<properties>
+    <!-- 0 = Simple Average, 1 = EWMA -->
+    <property id="avgMethod" type="number">1</property>
+
+    <!-- Number of valid readings to include in baseline window -->
+    <property id="windowSize" type="number">7</property>
+
+    <!-- Minimum valid readings before outputting a result -->
+    <property id="minReadings" type="number">5</property>
+
+    <!-- EWMA alpha * 10 (so 3 = alpha 0.3). Integer to avoid float settings issues. -->
+    <property id="ewmaAlphaTimes10" type="number">3</property>
+
+    <!-- Maximum acceptable % of empty callbacks before rejecting a reading -->
+    <property id="maxEmptyPct" type="number">40</property>
+
+    <!-- Measurement duration in minutes: 1, 2, or 3 -->
+    <property id="measureDurationMins" type="number">2</property>
+</properties>

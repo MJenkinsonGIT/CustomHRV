@@ -1,0 +1,52 @@
+<settings>
+
+    <setting propertyKey="@Properties.avgMethod"
+             title="@Strings.SettingAvgMethodTitle"
+             prompt="@Strings.SettingAvgMethodPrompt">
+        <settingConfig type="list">
+            <listEntry value="0">@Strings.SettingSimpleAvg</listEntry>
+            <listEntry value="1">@Strings.SettingEWMA</listEntry>
+        </settingConfig>
+    </setting>
+
+    <setting propertyKey="@Properties.windowSize"
+             title="@Strings.SettingWindowSizeTitle"
+             prompt="@Strings.SettingWindowSizePrompt">
+        <settingConfig type="numeric" min="5" max="30"
+                       errorMessage="@Strings.SettingWindowSizeError" />
+    </setting>
+
+    <setting propertyKey="@Properties.minReadings"
+             title="@Strings.SettingMinReadingsTitle"
+             prompt="@Strings.SettingMinReadingsPrompt">
+        <settingConfig type="numeric" min="3" max="10"
+                       errorMessage="@Strings.SettingMinReadingsError" />
+    </setting>
+
+    <!-- Alpha only meaningful when EWMA is selected. No enableIfTrue for
+         phone UI (boolean property required for that); we handle it in-app. -->
+    <setting propertyKey="@Properties.ewmaAlphaTimes10"
+             title="@Strings.SettingAlphaTitle"
+             prompt="@Strings.SettingAlphaPrompt">
+        <settingConfig type="numeric" min="1" max="9"
+                       errorMessage="@Strings.SettingAlphaError" />
+    </setting>
+
+    <setting propertyKey="@Properties.maxEmptyPct"
+             title="@Strings.SettingMaxEmptyTitle"
+             prompt="@Strings.SettingMaxEmptyPrompt">
+        <settingConfig type="numeric" min="0" max="100"
+                       errorMessage="@Strings.SettingMaxEmptyError" />
+    </setting>
+
+    <setting propertyKey="@Properties.measureDurationMins"
+             title="@Strings.SettingDurationTitle"
+             prompt="@Strings.SettingDurationPrompt">
+        <settingConfig type="list">
+            <listEntry value="1">@Strings.SettingDuration1</listEntry>
+            <listEntry value="2">@Strings.SettingDuration2</listEntry>
+            <listEntry value="3">@Strings.SettingDuration3</listEntry>
+        </settingConfig>
+    </setting>
+
+</settings>

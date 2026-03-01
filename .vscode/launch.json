@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "monkeyc",
+            "request": "launch",
+            "name": "Run on Venu 3 Simulator",
+            "device": "venu3"
+        }
+    ]
+}
