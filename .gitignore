@@ -1,7 +1,11 @@
 bin/
 obj/
+gen/
+mir/
+internal-mir/
 .project
 .settings/
+.vscode/
 *.prg
 *.prg.debug.xml
 *.iq
