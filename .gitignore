@@ -6,6 +6,9 @@ internal-mir/
 .project
 .settings/
 .vscode/
+.continue/
+.cursor/
+.cline/
 *.prg
 *.prg.debug.xml
 *.iq
